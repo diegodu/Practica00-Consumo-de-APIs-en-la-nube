@@ -1,0 +1,56 @@
+  
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+   
+}
+
+.contenido{
+    width: 100%;
+    height: 800px;
+    background-image: url("imagenes/logo.jpg");
+    background-size: cover;
+    position: relative; 
+}
+.contenido:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: azure;
+    position: static;
+    opacity: 0.2;
+    
+}
+.contenido h3{
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    background-color: black;
+    opacity: 0.3;
+    font-size: 40px;
+    color: white;
+    padding-left: 35%;
+
+}
+.busqueda{
+    width: 100%;
+    color:black;
+    padding: 10px;
+    padding-left: 38%;
+    
+}
+.busqueda input{
+    font-size: 30px;
+}
+#bus{
+    border-radius: 10px;
+}
+.busqueda input:hover{
+    background-color:darkgray;
+    color: black;
+
+}
+
