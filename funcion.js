@@ -14,7 +14,7 @@ function buscarTitulo(){
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200){
                 var data = JSON.parse(this.responseText)
-                console.log(data);
+             
                 data.Search.forEach(movie => {
                     detalles += "<tr>" +
                                 "<td><img src=" + movie.Poster + "></td>" +
