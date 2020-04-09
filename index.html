@@ -16,70 +16,79 @@
             <input type="text" name="titulo" id="titulo">
             <input id="bus" type="button" value="Buscar" name="buscar"  onclick="buscarTitulo()">
         </div>
-        <table>
-            <tr>
-                <td>
-                    <table class="data" id="mia">
-                        <thead>
-                            <tr>
-                              
-                                <th>POSTER</th>
-                                <th>TITULO</th>
-                                <th>AÑO</th>
-                                <th>TIPO</th>
-                                <th></th>
-            
-                            </tr>
-                        </thead>
-                        <tbody id="informacion">
-            
-                        </tbody>
-                    </table>
-
-                </td>
-            </tr>
-            <tr>
+        <div id="tabla1">
+            <table width="100%" class="ui called table blue" style="text-align: center;" >
+                
                 <tr>
-                    <div id="detalles">
-
-                    </div>
+                    <td>
+                        <table class="data" id="mia" width="100%"  style="background-color: rgb(178, 206, 248);"> 
+                            <thead>
+                                <tr>
+                                  
+                                    <th width="20%" style="font-size: 25px;" style="height: 50px;" style="background-color: rgb(144, 188, 255);">POSTER</th>
+                                    <th width="20%" style="font-size: 25px;" style="height: 50px;" style="background-color: rgb(144, 188, 255);"> TITULO</th>
+                                    <th width="20%" style="font-size: 25px;" style="height: 50px;" style="background-color: rgb(144, 188, 255);">AÑO</th>
+                                    <th width="20%" style="font-size: 25px;" style="height: 50px;" style="background-color: rgb(144, 188, 255);">TIPO</th>
+                                    <th width="20%" style="font-size: 25px;" style="height: 50px;" style="background-color: rgb(144, 188, 255);">INFORMACION</th>
+                
+                                </tr>
+                            </thead>
+                            <tbody  style="font-size: 30px;" id="informacion" >
+                                
+                
+                            </tbody>
+                        </table>
+    
+                    </td>
                 </tr>
-            </tr>
+                <tr>
+                    <tr>
+                        <div id="detalles">
+    
+                        </div>
+                    </tr>
+                </tr>
+               
+    
+            </table>
+            
+         
+          
+    
+           
 
-        </table>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                      
+                        <th width="20%" style="background-color: rgb(144, 188, 255);">POSTER</th>
+                        <th width="20%" style="background-color: rgb(144, 188, 255);"> TIsfTULO</th>
+                        <th width="20%" style="background-color: rgb(144, 188, 255);">AsddÑO</th>
+                        <th width="20%" style="background-color: rgb(144, 188, 255);">TIPO</th>
+                        <th width="20%" style="background-color: rgb(144, 188, 255);">INFORMACION</th>
+    
+                    </tr>
+                </thead>
+                <tbody id="info">
+                                
+                
+                </tbody>
+
+            </table>
+
+        </div>
+        <div>
+            <input type="button" value="Anterior" onclick="cambiar(-1)">
+            <input type="button" value="Siguiente" onclick="cambiar(1)">
+        </div>
+       
        
    
 
     </div>
-    <div>
-       
-            <table>
-                <tr>
-                  <td><strong>Curso</strong></td>
-                  <td><strong>Horas</strong></td>
-                  <td><strong>Horario</strong></td>
-                </tr>
-                
-                <tr>
-                  <td>CSS</td>
-                  <td>20</td>
-                  <td>16:00 - 20:00</td>
-                </tr>
-                
-                <tr>
-                  <td>HTML</td>
-                  <td>20</td>
-                  <td>16:00 - 20:00</td>
-                </tr>
-                
-                <tr>
-                  <td>Dreamweaver</td>
-                  <td>60</td>
-                  <td>16:00 - 20:00</td>
-                </tr>
-                </table>
-
-    </div>
+  
 
 
 
