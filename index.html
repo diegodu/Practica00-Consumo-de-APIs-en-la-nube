@@ -14,7 +14,7 @@
 
         <div class="busqueda">
             <input type="text" name="titulo" id="titulo">
-            <input id="bus" type="button" value="Buscar" name="buscar"  onclick="buscarTitulo()">
+            <input id="bus" type="button" value="Buscar" name="buscar"  onclick="llamarFuncion()">
         </div>
         <div id="tabla1">
             <table width="100%" class="ui called table blue" style="text-align: center;" >
@@ -33,7 +33,7 @@
                 
                                 </tr>
                             </thead>
-                            <tbody  style="font-size: 30px;" id="informacion" >
+                            <tbody style="font-size: 30px;" id="informacion" >
                                 
                 
                             </tbody>
@@ -44,6 +44,9 @@
                 <tr>
                     <tr>
                         <div id="detalles">
+                           
+                    
+                          
     
                         </div>
                     </tr>
@@ -58,31 +61,17 @@
            
 
         </div>
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                      
-                        <th width="20%" style="background-color: rgb(144, 188, 255);">POSTER</th>
-                        <th width="20%" style="background-color: rgb(144, 188, 255);"> TIsfTULO</th>
-                        <th width="20%" style="background-color: rgb(144, 188, 255);">AsddÑO</th>
-                        <th width="20%" style="background-color: rgb(144, 188, 255);">TIPO</th>
-                        <th width="20%" style="background-color: rgb(144, 188, 255);">INFORMACION</th>
-    
-                    </tr>
-                </thead>
-                <tbody id="info">
-                                
-                
-                </tbody>
-
-            </table>
+        <div id="datos">
+           
 
         </div>
-        <div>
+        
+        <div class="botones">
+         
             <input type="button" value="Anterior" onclick="cambiar(-1)">
             <input type="button" value="Siguiente" onclick="cambiar(1)">
         </div>
+
        
        
    
