@@ -2,16 +2,16 @@ var titulo = '';
 var totalDatos = 0;
 function buscarTitulo(url) {
     var detalles = "";
+    //metodo de busqueda por ajax
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText)
-
-            data.Search.forEach(movie => {
+    xmlhttp.onreadystatechange = function () { //llamar a la funcion
+        if (this.readyState == 4 && this.status == 200) { //comprobar informacion
+            var data = JSON.parse(this.responseText) //decodificar a JSON
+            data.Search.forEach(movie => {  //acceder a la informacion
                 detalles += "<tr>" +
                     "<td><img width='150' height='200' src=" + movie.Poster + "></td>" +
                     "<td>" + movie.Title + "</td>" +
@@ -19,32 +19,24 @@ function buscarTitulo(url) {
                     "<td>" + movie.Type + "</td>" +
                     "<td><a href='#datos' onclick=\"buscarPorId('" + movie.imdbID + "')\">Mas detalles" +
                     "</tr>";
-
             });
-            totalDatos=Math.round(data.totalResults/10);
-            
+            totalDatos=Math.round(data.totalResults/10);            
             document.getElementById("informacion").innerHTML = detalles;
         }
     };
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET", url, true); //peticion realizada
     xmlhttp.send();
 
 }
-
-
-
 function llamarFuncion() {
     index = 1;
     titulo = document.getElementById("titulo").value;
     let url = "http://www.omdbapi.com/?apikey=3b38b5cc&s=" + titulo + "&plot=full";
-    buscarTitulo(url);
-  
-     
+    buscarTitulo(url);     
 }
 
     function buscarPorId(id) {
         var contenido = "";
-
         if (window.XMLHttpRequest) {
             xmlhttp = new XMLHttpRequest();
         } else {
@@ -53,17 +45,12 @@ function llamarFuncion() {
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var data = JSON.parse(this.responseText)
-
                 contenido += `<table>
                     <thead>
-                        <tr>
-                          
+                        <tr>           
                             <th width="10%" style="background-color: rgb(144, 188, 255);">POSTER</th>
                             <th width="10%" style="background-color: rgb(144, 188, 255);"> TITULO</th>
-                            <th width="80%" style="background-color: rgb(144, 188, 255);">INFORMACION</th>
-                
-     
-        
+                            <th width="80%" style="background-color: rgb(144, 188, 255);">INFORMACION</th>      
                         </tr>
                     </thead>
                     <tbody id="info">
@@ -77,30 +64,28 @@ function llamarFuncion() {
                     <dt>Idioma: ${data.Language != 'N/A' ? data.Language : "No hay informacion"}</dt>
                     <dt>Actores: ${data.Actors != 'N/A' ? data.Actors : "No hay informacion"}</dt>
                     <dt>Premios: ${data.Awards != 'N/A' ? data.Awards : "No hay informacion"}</dt>
+                    <dt>Clasificado: ${data.Rated != 'N/A' ? data.Rated : "No hay informacion"}</dt>
+                    <dt>Lanzamiento: ${data.Released != 'N/A' ? data.Released : "No hay informacion"}</dt>
+                    <dt>Director: ${data.Director != 'N/A' ? data.Director : "No hay informacion"}</dt>
+                    <dt>Escritores: ${data.Writer != 'N/A' ? data.Writer : "No hay informacion"}</dt>
+                    <dt>Pais: ${data.Country != 'N/A' ? data.Country : "No hay informacion"}</dt>
+                    <dt>BoxOffice: ${data.BoxOffice != 'N/A' ? data.BoxOffice : "No hay informacion"}</dt>
+                    <dt>Sitio web: ${data.Website != 'N/A' ? data.Website : "No hay informacion"}</dt>
                     <dt>Resumen: ${data.Plot != 'N/A' ? data.Plot : "No hay informacion"}</dt>
-                    <dt>Produccion: ${data.Production != 'N/A' ? data.Production : "No hay informacion"}</dt>
-                   
+                    <dt>Produccion: ${data.Production != 'N/A' ? data.Production : "No hay informacion"}</dt>               
                     </dl></td>
-                    </tr>
-                   
-                                    
-                    
-                    </tbody>
-    
+                    </tr>               
+                    </tbody>   
                 </table>
                 <div style="width: 100%; padding: 10px 20px 20px 10px;"><a style="font-size: 20px; background-color: rgb(95, 158, 252); padding: 10px;"  href='#'   onclick=\"llamarFuncion()\">Inicio</a></div>`
-
-
                 document.getElementById("datos").innerHTML = contenido;
-                //  document.getElementById("paginacion").style.display="none";
             }
         }
         xmlhttp.open("GET", "http://www.omdbapi.com/?apikey=3b38b5cc&i=" + id + "&plot=full", true);
         xmlhttp.send();
     }
     var index = 1;
-
-
+    //paginacion
     function cambiar(valor) {
         index = valor + index;
         console.log(index)
@@ -111,7 +96,6 @@ function llamarFuncion() {
         }
         let url = "http://www.omdbapi.com/?apikey=3b38b5cc&s=" + titulo + "&page=" + index;
         buscarTitulo(url);
-
     }
 
 
