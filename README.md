@@ -1,4 +1,12 @@
 # Practica00-Consumo-de-APIs-en-la-nube
+
+Arquitectura cliente-servidor:
+La arquitectura funciona cuando un cliente solicita ingresar a una pagina en internet para realizar alguna petición, a su vez, el servicio de internet interactúa con la base de datos y esta devuelve la información solicitada, de la misma forma, el servicio de internet y el servicio web intercambia información para que la información se agregue a la pagina HTML, y finalmente la pagina muestra el resultado al cliente.
+
+![image](https://user-images.githubusercontent.com/34308601/79171868-c58c9280-7db8-11ea-9db7-066c7428fed4.png)
+
+DESARROLLO DE LA PRACTICA:
+
 HTML:
 En principio se debe crear una pagina web con html, es una pagina sencilla, con un menú de búsqueda que se lo crea de la siguiente forma:
 
